@@ -25,11 +25,11 @@ public class MainActivity extends AppCompatActivity {
     private void setup()
     {
         List<Item>items=new ArrayList<>();
-        items.add(new Item("Hablu","1"));
-        items.add(new Item("Gablu","2"));
-        items.add(new Item("Dablu","3"));
-        items.add(new Item("Bablu","4"));
-        items.add(new Item("Sablu","5"));
+
+        for(int i=0; i<26; i++)
+        {
+            items.add(new Item((char)(i+65)+"ablu",""+i));
+        }
 
         Adapter adapter = new Adapter(getApplicationContext(), items);
         recycler.setAdapter(adapter);

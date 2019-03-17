@@ -23,15 +23,13 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Vholder> {
         this.context=context;
     }
 
-    @NonNull
     @Override
-    public Vholder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public Vholder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.activity_adapter, viewGroup, false);
+        View view = inflater.inflate(R.layout.activity_adapter, parent, false);
         return new Vholder(view);
     }
 
-    @NonNull
     @Override
     public void onBindViewHolder(final Vholder holder, final int position) {
         final Item item = items.get(position);
@@ -49,7 +47,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Vholder> {
 
     @Override
     public int getItemCount() {
-        return 0;
+        return items.size();
     }
 
     public class Vholder extends RecyclerView.ViewHolder {
